@@ -48,58 +48,68 @@
                 <thead>
                   <tr>
                     <th> </th>
-                    <th id="PayableAssets" class="urdu">ASSETS</th>
+                    <th class="englishText">ASSETS</th>
                     <th id="PayableAmount" class="urdu">AMOUNT(in Rs.)</th>
+                    <th class="urduText urdu" style="display: none">قبیل زکاتھ مال</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Gold (In any form)</td>
+                    <td class="englishText">Gold (In any form)</td>
                     <td><input id="gold" class="form-control payable" type="number"></td>
+                    <td class="urduText urdu" style="display: none">موجودہ سونا (کسی بھی شکل میں )</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Silver(In any form)</td>
-                    <td><input id="silver" class="form-control payable" type="number"></td>                  
+                    <td class="englishText">Silver(In any form)</td>
+                    <td><input id="silver" class="form-control payable" type="number"></td>  
+                    <td class="urduText urdu" style="display: none">چاندی (کسی بھی شکل میں )</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Cash in hand or bank</td>
-                    <td><input id="cash" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Cash in hand or bank</td>
+                    <td><input id="cash" class="form-control payable" type="number"></td>    
+                    <td class="urduText urdu" style="display: none">بینک مے یا گھر مے موجودہ رقم </td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>Loans which are receivable</td>
-                    <td><input id="loans" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Loans which are receivable</td>
+                    <td><input id="loans" class="form-control payable" type="number"></td>      
+                    <td class="urduText urdu" style="display: none">کسی کو قرض دی گی رقم </td>  
                   </tr> 
                   <tr>
                     <td>5</td>
-                    <td>Foreign Currency</td>
-                    <td><input id="foreigncash" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Foreign Currency</td>
+                    <td><input id="foreigncash" class="form-control payable" type="number"></td>     
+                    <td class="urduText urdu" style="display: none">غیر ملکی کرنسی (ہندوستانی قیمت پر )</td> 
                   </tr>                    
                   <tr>
                     <td>6</td>
-                    <td>Bonds</td>
-                    <td><input id="bonds" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Bonds</td>
+                    <td><input id="bonds" class="form-control payable" type="number"></td>  
+                    <td class="urduText urdu" style="display: none">بانڈز  </td>  
+                      
                   </tr>
                   <tr>
                     <td>7</td>
-                    <td>Shares(At actual rate)</td>
-                    <td><input id="shares" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Shares(At actual rate)</td>
+                    <td><input id="shares" class="form-control payable" type="number"></td>  
+                     <td class="urduText urdu" style="display: none">شیئرز (اصلی قیمت پر )</td>                      
                   </tr>
                   <tr>
                     <td>8</td>
-                    <td>Fixed Deposits</td>
-                    <td><input id="fixedDeposits" class="form-control payable" type="number"></td>                           
+                    <td class="englishText">Fixed Deposits</td>
+                    <td><input id="fixedDeposits" class="form-control payable" type="number"></td>  
+                    <td class="urduText urdu" style="display: none">فکسڈ ڈپازٹ  </td>  
                   </tr>
                   <tr>
                     <td>9</td>
-                    <td>Amount deposited for future(eg. Marriage, Haj, Construction, etc.)</td>
+                    <td class="englishText">Amount deposited for future(eg. Marriage, Haj, Construction, etc.)</td>
                     <td><input id="deposit" class="form-control payable" type="number"></td>                           
                   </tr>
                   <tr>
-                    <td>11</td>
+                    <td class="englishText">11</td>
                     <td>Amount put with any other person as amaanath</td>
                     <td><input id="amaanath" class="form-control payable" type="number"></td>                           
                   </tr>
@@ -280,11 +290,11 @@
             //Subheading 1
             $("#ZakathPayableAssets").html("ZAKAATH PAYABLE ASSETS")
             
-            //Assets
-            $("#PayableAssets").html("ASSETS")
-            
             //Payable Amount
-            $("#PayableAmount").html("AMOUNT(in Rs.)")            
+            $("#PayableAmount").html("AMOUNT(in Rs.)")      
+            
+            $(".englishText").show();
+            $(".urduText").hide();
         }); 
         
         //Urdu Functions
@@ -298,13 +308,13 @@
             $("#MainHeading").html("زکات نکالنے کے لئے مددگار فارم");
             
             //Subheading 1
-            $("#ZakathPayableAssets").html("وو مال جسکی زکاتھ   دینی ہے")
+            $("#ZakathPayableAssets").html("وہ مال جسکی زکاتھ   دینی ہے")
             
-            //Assets
-            $("#PayableAssets").html("قبیل زکاتھ مال")
             
             //Payable Amount
             $("#PayableAmount").html("رقم ")
+            $(".englishText").hide();
+            $(".urduText").show();
         }); 
     });
  
