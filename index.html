@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -17,7 +17,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       <style>
-
+        @font-face {
+        font-family: Urdu;
+        src: url(/NotoNastaliqUrdu-Regular.ttf);
+        }
+          .urdu {
+              font-family: Urdu;
+          }
       </style>
   </head>
   <body>
@@ -26,14 +32,15 @@
 
 
 <div class="container-fluid">
-<nav class="navbar fixed-bottom navbar-light bg-light">
-  <p class="">Payable : <span id="totalPayable"></span></p>
-  <p class="">Deductable : <span id="totalDeductable"></span></p>
-  <p class="">Zakaath Payable Amount : <span id="totalZakat"></span></p>
- <div class="alert alert-primary" role="alert"> <p class="">Actual Zakaath : <span id="ActualZakat"></span></p> 
- </div>
+    
+<nav class="nav nav-pills flex-column flex-sm-row">
+  <a class="flex-sm-fill text-sm-center nav-link active" id="EnglishBtn" href="#">English</a>
+  <a class="flex-sm-fill text-sm-center nav-link" id="UrduBtn" href="#">Urdu</a>
 </nav>
-	<div class="row">        
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="pills-english" role="tabpanel" aria-labelledby="pills-english-tab">
+        <h1 id="MainHeading">Zakaath Calculation Form</h1>
+    	<div class="row">        
         <div class="col-lg-12 table-responsive-sm">
             <div class="panel panel-primary">
               <h3>ZAKAATH PAYABLE ASSETS</h3>
@@ -196,9 +203,191 @@
             </div>
          
           </div>     
-       
-        
+
 	</div>
+    </div>
+    <div class="tab-pane fade show active" id="pills-urdu" role="tabpanel" aria-labelledby="pills-urdu-tab">
+        <h1 class="urdu">زکات نکلنے کے لئے مددگار فارم </h1>
+    	<div class="row">        
+        <div class="col-lg-12 table-responsive-sm">
+            <div class="panel panel-primary">
+              <h3 class="urdu">ZAKAATH PAYABLE ASSETS</h3>
+              <table class="table" id="payable">
+                <thead>
+                  <tr>
+                    <th> </th>
+                    <th>ASSETS</th>
+                    <th>AMOUNT(in Rs.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td id="goldText">Gold (In any form)</td>
+                    <td><input id="gold" class="form-control payable" type="number"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Silver(In any form)</td>
+                    <td><input id="silver" class="form-control payable" type="number"></td>                  
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Cash in hand or bank</td>
+                    <td><input id="cash" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Loans which are receivable</td>
+                    <td><input id="loans" class="form-control payable" type="number"></td>                           
+                  </tr> 
+                  <tr>
+                    <td>5</td>
+                    <td>Foreign Currency</td>
+                    <td><input id="foreigncash" class="form-control payable" type="number"></td>                           
+                  </tr>                    
+                  <tr>
+                    <td>6</td>
+                    <td>Bonds</td>
+                    <td><input id="bonds" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Shares(At actual rate)</td>
+                    <td><input id="shares" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Fixed Deposits</td>
+                    <td><input id="fixedDeposits" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Amount deposited for future(eg. Marriage, Haj, Construction, etc.)</td>
+                    <td><input id="deposit" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>Amount put with any other person as amaanath</td>
+                    <td><input id="amaanath" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td>Installments paid for BC(Chitthi)(if the amount has not been received)</td>
+                    <td><input id="chitthi" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td>Amount invested in finance</td>
+                    <td><input id="finance" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>Employee's GPF, PPF, EPF(when received)</td>
+                    <td><input id="gpf" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td>Extra GPF by his own will</td>
+                    <td><input id="extraGpf" class="form-control payable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td>Land or Flat etc,  purchased for the purpose of business(Real Estate)</td>
+                    <td><input id="land" class="form-control payable" type="number"></td>                           
+                  </tr>    
+                  <tr>
+                    <td>17</td>
+                    <td>Amount paid as advance(for any purpose)</td>
+                    <td><input id="advance" class="form-control payable" type="number"></td>                           
+                  </tr>  
+                  <tr>
+                    <td>18</td>
+                    <td>Value of goods held for sale(at selling price)</td>
+                    <td><input id="goods" class="form-control payable" type="number"></td>                           
+                  </tr>  
+                  <tr>
+                    <td>19</td>
+                    <td>Value of goods given on credit</td>
+                    <td><input id="creditGoods" class="form-control payable" type="number"></td>                           
+                  </tr>  
+                  <tr>
+                    <td>20</td>
+                    <td>Investment as a partnership in any business</td>
+                    <td><input id="partnershipInvestment" class="form-control payable" type="number"></td>                           
+                  </tr> 
+                  <tr>
+                    <td>21</td>
+                    <td>Value of raw material in factory or shop(eg. paper for xerox in xerox shop, etc)</td>
+                    <td><input id="rawMaterial" class="form-control payable" type="number"></td>                           
+                  </tr>
+                </tbody>
+              </table>
+               
+            </div>
+         
+          </div>
+        
+
+       <div class="col-lg-12 table-responsive-sm" style="padding-bottom:200px">
+            <div class="panel panel-primary">
+              <h3>DEDUCTABLE AMOUNT</h3>
+              <table class="table" id="deductable">
+                <thead>
+                  <tr>
+                    <th> </th>
+                    <th>ASSETS</th>
+                    <th>AMOUNT(in Rs.)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Loans which are payable</td>
+                    <td><input id="loans" class="form-control deductable" type="number"></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Maher of wife(if not paid)</td>
+                    <td><input id="maher" class="form-control deductable" type="number"></td>                  
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Balance installments of BC(if the amount has been received)</td>
+                    <td><input id="cash" class="form-control deductable" type="number"></td>                           
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Salaries of employees and utility bills for the month</td>
+                    <td><input id="loans" class="form-control deductable" type="number"></td>                           
+                  </tr> 
+                  <tr>
+                    <td>5</td>
+                    <td>Last year's zakaath(if not paid)</td>
+                    <td><input id="lastZakat" class="form-control deductable" type="number"></td>                           
+                  </tr>                    
+                </tbody>
+              </table>
+            </div>
+         
+          </div>     
+
+	</div>
+    </div>
+
+    
+</div>   
+    
+    
+    
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <p class="">Payable : <span id="totalPayable"></span></p>
+  <p class="">Deductable : <span id="totalDeductable"></span></p>
+  <p class="">Zakaath Payable Amount : <span id="totalZakat"></span></p>
+ <div class="alert alert-primary" role="alert"> <p class="">Actual Zakaath : <span id="ActualZakat"></span></p> 
+ </div>
+</nav>
+
 </div>
 
 
@@ -244,7 +433,30 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
     <script>
     $( document ).ready(function() {
-    $('#exampleModalLong').modal('show')
+   // $('#exampleModalLong').modal('show')
+        
+        //english functions
+        $("#EnglishBtn").click(function(){
+            //remove urdu highlight
+            $("#UrduBtn").removeClass("active");
+            //add highlight to english
+            $("#EnglishBtn").addClass("active");
+            
+            //MAIN HEADING
+            $("#MainHeading").html("Zakaath Calculation Form");
+           
+        }); 
+        
+        //Urdu Functions
+        $("#UrduBtn").click(function(){
+            //add urdu highlight
+            $("#UrduBtn").addClass("active");
+            //remove highlight to english
+            $("#EnglishBtn").removeClass("active");
+           
+            //MAIN HEADING
+            $("#MainHeading").html("زکات نکالنے کے لئے مددگار فارم");
+        }); 
     });
  
         
